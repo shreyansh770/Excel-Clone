@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cedarville+Cursive&family=Courgette&family=Courier+Prime:ital@0;1&family=Dancing+Script:wght@500&family=Gloria+Hallelujah&family=Oswald:wght@300&family=Overpass+Mono&family=Peddana&family=Roboto:wght@100&family=Rubik:ital,wght@0,300;1,500&family=Yellowtail&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="Header">
+         <div class="icon">Icon</div>
+         <div class="heading">Excel</div>
+         <div class="name">Shreyansh</div>
+     </div>
+     <div class="menu-container">
+         <div id="file" class="file menu-active">File</div>
+         <div id="home" class="home">Home</div>
+
+     </div>
+
+     <div class="menu-options-container">
+         <div class=" file-menu-options menu-options-active  ">
+             <div class="new">New</div>
+             <div class="open">Open</div>
+             <div class="save">Save</div>
+         </div>
+         <div class="home-menu-options">
+
+            <div class="cell-formating">
+
+                <div class="cell-font-name">
+                    <select name="font" id="cell-font" style="background: aliceblue; border: none;" onclick="event.stopPropagation();">
+                        <option value="arial" style="font-family: 'arial'">Arial</option>
+                        <option value="'Caveat', cursive" style="font-family: 'Caveat', cursive;">Caveat</option>
+                        <option value="'Cedarville Cursive', cursive" style="font-family: 'Cedarville Cursive', cursive;">Cedarville</option>
+                        <option value="'Courgette', cursive" style="font-family: 'Courgette', cursive;">Courgette</option>
+                        <option value='Courier Prime', monospace style="font-family:'Courier Prime', monospace ;">Courier Prime</option>
+                        <option value="'Dancing Script', cursive" style="font-family: 'Dancing Script', cursive;">Dancing Script</option>
+                        <option value="'Gloria Hallelujah', cursive" style="font-family:'Gloria Hallelujah', cursive ;">Gloria Hallelujah</option>
+                        <option value="'Oswald', sans-serif" style="font-family:'Oswald', sans-serif ;">Oswald</option>
+                        <option value="Overpass Mono', monospace" style="font-family:'Overpass Mono', monospace ;">Overpass Mono</option>
+                        <option value="'Peddana', serif" style="font-family: 'Peddana', serif;">Peddana</option>
+                        <option value="'Roboto', sans-serif" style="font-family:'Roboto', sans-serif ;">Roboto</option>
+                        <option value="'Rubik', sans-serif" style="font-family:'Rubik', sans-serif ;">Rubik</option>
+                        <option value="'Yellowtail', cursive" style="font-family:'Yellowtail', cursive ;">Yellowtail</option>
+                    </select>
+                </div>
+                 <div class="cell-text-style">
+                     <div class="bold">
+                         <input type="button" value="B" style="font-weight: bold;background: aliceblue; border: none; " >
+                     </div>
+                     <div class="underline" >
+                        <input type="button" value="U" style="text-decoration: underline;background: aliceblue; border: none;" >
+                     </div>
+                     <div class="italic">
+                        <input type="button" value="I" style="font-style:italic;background: aliceblue; border: none;">
+                     </div>
+                 </div>
+
+            </div>
+
+            <div class="cell-style">
+
+                <div class="cell-font-size">
+                  
+                  <select name="font-size-slider"  id="cell-font-slider" style="background: aliceblue; border: none; width:45px" >
+                     <option value="10">10</option>
+                     <option value="12">12</option>
+                     <option value="14">14</option>
+                     <option value="16">16</option>
+                  </select>
+                </div>
+
+                <div class="cell-color">
+                    <input type="color" name="cell-background" id="cell-background" style="background: aliceblue; border: none;">
+                    <input type="color" name="cell-text" id="cell-text" value="#ff0000" style="background: aliceblue; border: none;">
+                </div>
+
+            </div>
+
+            <div class="cell-align">
+
+                <div class="left">
+                    <input type="button" value="L" style="background: aliceblue; border: none; font-style: italic;">
+                </div>
+                <div class="center">
+                    <input type="button" value="C" style="background: aliceblue; border: none; font-style: italic" >
+                </div>
+                <div class="right">
+                    <input type="button" value="R" style="background: aliceblue; border: none; font-style: italic">
+                </div>
+
+            </div>
+
+        </div>
+     </div>
+
+     <div class="formula">
+           <img src="C:\Users\shrey\Desktop\dev_Sept\Lect6_Excel_electron\activity\formula.png" alt="" style="height: 27px; width: 27px;">
+         <input type="text"class="address" placeholder="Address" readonly>
+         <input type="text" class="cell-formula" placeholder="Write Formula">
+     </div>
+
+     <div class="content">
+
+         <div class="top-left-cell"></div>
+
+            <div class="top-row">
+
+                <%for(let j=0 ; j<26 ; j++){%>
+                    <div  class="top-row-cell" c-id=<%=j%>> <%=String.fromCharCode(65+j) %> </div>
+                <%}%>
+             
+          </div>
+
+         <div class="left-col">
+
+           <%for(let i=0 ; i<100 ; i++){%>
+              <div  class="left-col-cell" c-id=<%=i%>> <%=i+1%></div>
+           <%}%>
+
+         </div>
+
+
+        <div class="cells">
+            <%for(let i=0 ; i<100 ; i++){%>
+                <div class="row">
+                    <%for(let j=0 ; j<26 ; j++){%>
+                        <div  class="cell" contenteditable="true" r-id=<%=i%> c-id=<%=j%>></div>
+                        <%}%>
+                </div>
+                <%}%>
+        </div>
+     </div>
+
+     <div class="sheets">
+         Sheets
+     </div>
+
+
+
+<script src="./script.js"></script>
+</body>
+</html>
