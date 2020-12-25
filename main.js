@@ -31,6 +31,7 @@ function createWindow () {
 
   win.loadFile("./index.ejs").then(function(){
       win.maximize();
+      win.removeMenu();
   })
   win.webContents.openDevTools()// it will open the inspect tool box
 
