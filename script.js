@@ -1,7 +1,7 @@
 let $=require("jquery")//used for DOM manupulation
 let fs=require("fs");
 let dialog = require("electron").remote.dialog;//to open dialog box
-
+cd
 
 $("document").ready(function(){
     let db;
